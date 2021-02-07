@@ -1,0 +1,45 @@
+<div class="map-wrapper" #mapWrapper>
+  <div class="map" *ngIf="viewMap">
+    <div *ngFor="let row of viewMap; index as x" class="map_row">
+      <div *ngFor="let item of row; index as y"
+           class="map_item"
+           [style.height.px]="size"
+           [style.width.px]="size">
+        <ng-container [ngSwitch]="viewMap[x][y].type">
+          <app-space *ngSwitchCase="cellType.space"
+                     [draw]="leeResult &&
+                      leeResult.found &&
+                      leeResult.path.indexOf(y* length + x) !== -1"></app-space>
+          <app-wsf *ngSwitchDefault
+                   [type]="viewMap[x][y].type"
+                   [draw]="leeResult &&
+                      leeResult.found &&
+                      leeResult.path.indexOf(y* length + x) !== -1"></app-wsf>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form">
+  <form [formGroup]="form">
+    <div class="form_field-wrapper"
+         [class.field-fail]="form.controls['field'].touched && form.controls['field'].errors">
+      <input type="text"
+             formControlName="field"
+             placeholder="Пример: s..t">
+      <app-form-field-errors
+        *ngIf="form.controls['field'].touched && form.controls['field'].errors"
+        [errors]="form.controls['field'].errors"></app-form-field-errors>
+    </div>
+    <div class="form_field-wrapper"
+         [class.field-fail]="form.controls['power'].touched && form.controls['power'].errors">
+      <input type="number"
+             formControlName="power"
+             placeholder="Мощность(Power)">
+      <app-form-field-errors
+        *ngIf="form.controls['power'].touched && form.controls['power'].errors"
+        [errors]="form.controls['power'].errors"></app-form-field-errors>
+    </div>
+  </form>
+  <button class="result-button" (click)="check()">Проверить</button>
+</div>

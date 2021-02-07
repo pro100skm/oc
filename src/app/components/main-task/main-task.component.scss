@@ -1,0 +1,59 @@
+@import "src/styles/variables";
+
+:host {
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.map-wrapper {
+  margin: 10px 0;
+  min-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .map {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.1);
+  }
+  .map_row {
+    background-color: #fff;
+    display: flex;
+  }
+
+  .map_item {
+
+  }
+}
+
+.form {
+  padding: 0 5px;
+  min-width: 300px;
+}
+
+
+
+.form_field-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 18px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+  background-color: $input-bg-color;
+  margin-bottom: 20px;
+}
+.field-fail {
+  border: 1px solid $fail;
+}
+
+.result-button {
+  width: 100%;
+}

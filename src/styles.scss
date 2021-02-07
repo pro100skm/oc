@@ -1,1 +1,75 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $background;
+  color: $text;
+}
+
+input {
+  color: $input-text-color;
+  background: $input-bg-color;
+  font: inherit;
+  border: 0;
+  outline: 0;
+  &::placeholder {
+    color: $text;
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button {
+  display: inline-block;
+  font: inherit;
+  border: 0;
+  outline: 0;
+  transition: all 200ms ease-in;
+  cursor: pointer;
+  background: $button-bg-color;
+  color: $button-text-color;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+  border-radius: 2px;
+  padding: 12px 36px;
+
+  &:hover {
+    background: darken($button-bg-color, 4%);
+  }
+
+  &:active {
+    background: $button-bg-color;
+    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2);
+  }
+}
+
+.text-failure {
+  color: $fail;
+}
+
+.ng-invalid.ng-touched {
+  border-color: $fail;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+.draw {
+  background-color: $button-bg-color;
+}

@@ -3,7 +3,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  ElementRef,
+  ElementRef, HostListener,
   ViewChild
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -31,6 +31,10 @@ export class MainTaskComponent implements AfterViewInit {
   start: Point;
   finish: Point;
 
+  @HostListener('window:resize')
+  onResize(): any {
+    this.resize();
+  }
   constructor(private _cdr: ChangeDetectorRef, private _lee: LeeService) {
     this.form = new FormGroup({
       field: new FormControl('s.##...#.#..#..t', [

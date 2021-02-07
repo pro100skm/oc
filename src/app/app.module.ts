@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormFieldErrorsComponent } from './components/form-field-errors/form-field-errors.component';
 import { SpaceComponent } from './components/space/space.component';
 import { WsfComponent } from './components/wsf/wsf.component';
+import { InfoPageComponent } from './components/info-page/info-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { WsfComponent } from './components/wsf/wsf.component';
     MainTaskComponent,
     FormFieldErrorsComponent,
     SpaceComponent,
-    WsfComponent
+    WsfComponent,
+    InfoPageComponent
   ],
   imports: [
     BrowserModule,

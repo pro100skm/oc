@@ -51,6 +51,7 @@ export class MainTaskComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.resize();
+    this.check();
   }
 
   resize(): void {

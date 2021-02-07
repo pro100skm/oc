@@ -56,6 +56,11 @@
   border: 1px solid $fail;
 }
 
-.result-button {
+.button {
   width: 100%;
+  margin-bottom: 10px;
+}
+
+.info-button {
+  background-color: #337bff;
 }
